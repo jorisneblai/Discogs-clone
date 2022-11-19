@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const API_URL = "https://api.discogs.com"
 const CONSUMER_KEY = "KHhlkeAcCQiYpBeUtOVp";
 const SECRET_KEY = "YKBpKkOZzbjDMWulsDbLlYYwFqcOGiQN";
 
-export const useDiscogs = (props) => {
+export const useDiscogs = (endPoint, page, perPage) => {
     const [data, setData] = useState(undefined);
 
     const getPublicData = (endPoint, page, perPage) => {
         const keyParams = `&key=${CONSUMER_KEY}&secret=${SECRET_KEY}`;
-        fetch(`${API_URL}/${endPoint}/?page=${page}&perPage=${perPage}/${keyParams}`, {
+        fetch(`${API_URL}/${endPoint}?page=${page}&perPage=${perPage}&${keyParams}`, {
                 method: 'GET',
             })
                 .then((response) => response.json())
@@ -17,6 +17,10 @@ export const useDiscogs = (props) => {
                 .catch((error) => { console.error('Error:', error);
             });
     }
+
+    useEffect(() => {
+        getPublicData(endPoint, page, perPage);
+    }, [])
 
     return data;
 }

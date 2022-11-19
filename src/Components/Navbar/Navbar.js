@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { HomeOutlined } from '@ant-design/icons';
 import './Navbar.css';
 
-const Navbar = (props) => {
+const Navbar = (props) => {    
     return (
         <div className="navbar">
             <button className="navbar-button">
