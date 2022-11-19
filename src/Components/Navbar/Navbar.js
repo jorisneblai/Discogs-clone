@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { HomeOutlined } from '@ant-design/icons';
 // import VinylIcon from '../../Icons/vinyl.svg';
 import './Navbar.css';
