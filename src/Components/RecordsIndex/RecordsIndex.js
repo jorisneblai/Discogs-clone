@@ -3,7 +3,7 @@ import { useDiscogs } from '../../Utils/useDiscogs';
 
 const RecordsIndex = (props) => {
     const [records, setRecords] = useState();
-    const data = useDiscogs('/users/jewice/collection/folders/0/releases', 1, 50);
+    const data = useDiscogs('/users/jewice/collection/folders/0/releases', 1, 10);
 
     useEffect(() => {
         if (data) {
@@ -13,8 +13,10 @@ const RecordsIndex = (props) => {
 
 
     return (
-        <div>
-            {records && records.releases && records.releases.map(elm => elm.basic_information.title)}
+        <div className='recordsIndexContainer'>
+            {records && records.releases && records.releases.map(recordInfo => 
+
+            )}
         </div>
     )
 }
