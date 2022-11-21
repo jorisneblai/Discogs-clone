@@ -16,10 +16,14 @@ const RecordsIndex = (props) => {
     return (
         <div className='recordsIndexContainer'>
             {records && records.releases && records.releases.map(recordInfo => 
-                <Record key={recordInfo.id} info={recordInfo} />
+                <Record 
+                    key={recordInfo.id} 
+                    info={recordInfo}
+                />
             )}
         </div>
     )
 }
+
 
 export default RecordsIndex;
