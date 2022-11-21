@@ -17,7 +17,7 @@ const Record = (props) => {
                     title={props.info.basic_information.title} 
                     description={props.info.basic_information.artists.map(artist => {
                         for(artist of props.info.basic_information.artists) {
-                            console.log(artist.name);
+                            return artist.name;
                         }
                     })} 
 
