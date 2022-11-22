@@ -7,6 +7,7 @@ const Record = (props) => {
     return (
         <div>
             <Card
+                bordered
                 hoverable
                 style={{
                     width: 240,
