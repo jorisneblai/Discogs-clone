@@ -11,6 +11,7 @@ const Record = (props) => {
                 hoverable
                 style={{
                     width: 240,
+                    height: 350,
                 }}
                 cover={<img src={props.info.basic_information.cover_image} alt="cover" />}
             >
