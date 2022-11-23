@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDiscogs } from '../../Utils/useDiscogs';
 import Record from '../Record/Record';
 import './RecordsIndex.css';
+
 const RecordsIndex = (props) => {
     const [records, setRecords] = useState();
     const data = useDiscogs('/users/jewice/collection/folders/0/releases', 1, 10);
