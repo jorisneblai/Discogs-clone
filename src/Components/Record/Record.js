@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card } from 'antd';
+import './Record.css'
 
 const { Meta } = Card;
 
@@ -13,7 +14,7 @@ const Record = (props) => {
                     width: 240,
                     height: 350,
                 }}
-                cover={<img src={props.info.basic_information.cover_image} alt="cover" />}
+                cover={<img src={props.info.basic_information.cover_image} alt="cover" className="recordCover" />}
             >
                 <Meta 
                     title={props.info.basic_information.title} 
