@@ -1,28 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDiscogs } from '../../Utils/useDiscogs';
 import Record from '../Record/Record';
 import './RecordsIndex.css';
+
 const RecordsIndex = (props) => {
-    const [records, setRecords] = useState();
-    const [{ data, isLoading, isError }, doFetch] = useDiscogs('/users/jewice/collection/folders/0/releases', 1, 10);
+    const [{ data, isLoading, isError }, getRecords] = useDiscogs('/users/jewice/collection/folders/0/releases', 1, 10);
 
     useEffect(() => {
-        if (data) {
-            setRecords(data);
-        }
-    }, [data])
-
+        getRecords();
+    }, [])
 
     return (
         <div className='recordsIndexContainer'>
-            isLoading ?
-                <span>Loading...</span>
+            {  isLoading ?
+                <div>Loading...</div>
             :
-                {records && records.releases && records.releases.map(recordInfo => 
-                    <Record key={recordInfo.id} info={recordInfo} />
-                )}
+                data && data.releases && data.releases.map(recordInfo => 
+                    <Record 
+                        key={recordInfo.id} 
+                        info={recordInfo}
+                    />
+                )
+            }
         </div>
     )
 }
+
 
 export default RecordsIndex;

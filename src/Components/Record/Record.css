@@ -1,0 +1,23 @@
+.record-cover {
+    height: 240px;
+    width: 240px;
+}
+
+.modal-record-cover {
+    height: 480px;
+    width: 480px;
+}
+
+.modal-record-artist {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.modal-record-genre {
+    font-size: smaller;
+    font-style: italic;
+}
+
+.modal-record-year {
+    font-size: smaller;
+}

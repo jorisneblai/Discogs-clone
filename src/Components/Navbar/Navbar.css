@@ -5,9 +5,17 @@
     justify-content: center;
     position: fixed;
     width: 100%;
+    z-index: 1;
 }
 
-.navbar-icon-home {
+/* .navbar-icon-home {
     font-size: 3rem;
     color: #fff;
+} */
+
+.navbar-vinyl-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
 }

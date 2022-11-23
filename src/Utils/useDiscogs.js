@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const API_URL = "https://api.discogs.com"
 const CONSUMER_KEY = "KHhlkeAcCQiYpBeUtOVp";
@@ -9,22 +10,19 @@ export const useDiscogs = (endPoint, page, perPage) => {
     const [url, setUrl] = useState(
         `${API_URL}/${endPoint}?page=${page}&perPage=${perPage}&key=${CONSUMER_KEY}&secret=${SECRET_KEY}`,
     );
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
   
     useEffect(() => {
         const fetchData = async () => {
-            setIsError(false);
-            setIsLoading(true);
-    
             try {
-                const result = await axios(url);
-                setData(result.data);
+                await axios(url).then((result) => {
+                    setData(result.data);
+                    setIsLoading(false)
+                })
             } catch (error) {
                 setIsError(true);
             }
-    
-            setIsLoading(false);
         };
   
         fetchData();
