@@ -4,10 +4,8 @@ import './Record.css'
 
 const { Meta } = Card;
 
-
 const Record = (props) => {
     const [modalOpen, setModalOpen] = useState(false);
-
     const discogsUrl = `https://www.discogs.com/fr/release/${props.info.basic_information.id}`;
 
     return (
@@ -16,10 +14,7 @@ const Record = (props) => {
                 onClick={() => setModalOpen(true)}
                 bordered={false}
                 hoverable
-                style={{
-                    width: 240,
-                    height: 350,
-                }}
+                style={{ width: 240, height: 350 }}
                 cover={<img src={props.info.basic_information.cover_image} alt="cover" className="record-cover" />}
             >
                 <Meta 
@@ -34,18 +29,11 @@ const Record = (props) => {
             </Card>
             <Modal
                 title={props.info.basic_information.title}
-                style={{
-                    width: 500,
-                    height: 500,
-                    
-
-                }}
+                style={{ width: 500, height: 500 }}
                 open={modalOpen}
                 onOk={() => setModalOpen(false)}
                 onCancel={() => setModalOpen(false)}
-                footer={[
-                    <a href={discogsUrl} target="_blank" rel="noreferrer">View more on Discogs</a>
-                ]}
+                footer={[ <a href={discogsUrl} target="_blank" rel="noreferrer">View more on Discogs</a> ]}
             >
                 <img src={props.info.basic_information.cover_image} alt="cover" className="modal-record-cover" />
                 <p className="modal-record-artist">
@@ -60,7 +48,7 @@ const Record = (props) => {
                     <span> / {props.info.basic_information.styles}</span>
                 </p>
                 <p className="modal-record-year">
-                    {props.info.basic_information.year}
+                    {props.info.basic_information.year !== 0 ? props.info.basic_information.year : "unknown year"}
                 </p>
             </Modal>
         </div>
