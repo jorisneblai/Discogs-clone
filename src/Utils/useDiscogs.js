@@ -7,9 +7,7 @@ const SECRET_KEY = "YKBpKkOZzbjDMWulsDbLlYYwFqcOGiQN";
 
 export const useDiscogs = (endPoint, page, perPage) => {
     const [data, setData] = useState();
-    const [url, setUrl] = useState(
-        `${API_URL}/${endPoint}?page=${page}&perPage=${perPage}&key=${CONSUMER_KEY}&secret=${SECRET_KEY}`,
-    );
+    const [url, setUrl] = useState(`${API_URL}/${endPoint}?page=${page}&perPage=${perPage}&key=${CONSUMER_KEY}&secret=${SECRET_KEY}`,);
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
   
