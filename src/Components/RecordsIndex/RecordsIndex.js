@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDiscogs } from '../../Utils/useDiscogs';
 import Record from '../Record/Record';
+import RecordCardSkeleton from '../RecordCardSkeleton/RecordCardSkeleton';
+
 import './RecordsIndex.css';
 
 const RecordsIndex = (props) => {
@@ -12,8 +14,8 @@ const RecordsIndex = (props) => {
 
     return (
         <div className='recordsIndexContainer'>
-            {  isLoading ?
-                <div>Loading...</div>
+            {  true ?
+                    <RecordCardSkeleton />
             :
                 data && data.releases && data.releases.map(recordInfo => 
                     <Record 
