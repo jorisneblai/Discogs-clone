@@ -1,0 +1,6 @@
+.record-card-skeleton {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+
+}

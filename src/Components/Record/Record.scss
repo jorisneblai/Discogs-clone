@@ -1,0 +1,40 @@
+.record-cover {
+    height: 240px;
+    width: 240px;
+    border-radius: 5px;
+    box-shadow:
+      0 1px 1px hsl(0deg 0% 0% / 0.075),
+      0 2px 2px hsl(0deg 0% 0% / 0.075),
+      0 4px 4px hsl(0deg 0% 0% / 0.075),
+      0 8px 8px hsl(0deg 0% 0% / 0.075),
+      0 16px 16px hsl(0deg 0% 0% / 0.075);
+    transition: transform 0.5s;
+    &:hover {
+        box-shadow: 
+        0.3px 0.3px 0.5px hsl(0deg 0% 0% / 0.17),
+        2.6px 2.5px 4.1px -0.6px hsl(0deg 0% 0% / 0.17),
+        6.3px 6px 9.8px -1.2px hsl(0deg 0% 0% / 0.17),
+        13.7px 13.1px 21.3px -1.9px hsl(0deg 0% 0% / 0.17),
+        27.6px 26.4px 43px -2.5px hsl(0deg 0% 0% / 0.17);
+        transform: scale(1.1);
+    }
+}
+
+.modal-record-cover {
+    height: 480px;
+    width: 480px;
+}
+
+.modal-record-artist {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.modal-record-genre {
+    font-size: smaller;
+    font-style: italic;
+}
+
+.modal-record-year {
+    font-size: smaller;
+}

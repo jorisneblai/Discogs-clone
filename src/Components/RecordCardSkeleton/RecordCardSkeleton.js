@@ -2,26 +2,22 @@ import React from 'react';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
+import './RecordCardSkeleton.css';
+
 const RecordCardSkeleton = (props) => {
     const rows = [];
     for (let i = 0; i < 10; i++) {
         rows.push(
-            <Skeleton 
-                height= {357} 
-                width= {240} 
-                style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "space-evenly",
-                    gap: 10
-                }}
-                
-            />
+            <div style={{ paddingTop: "100px" }}>
+                <Skeleton height= {240} width= {240} />
+                <Skeleton height= {40} width= {240} />
+                <Skeleton height= {40} width= {240} />
+            </div>
         )
     }
     
     return (
-       <div>
+       <div className="record-card-skeleton">
             {rows}
        </div>
        

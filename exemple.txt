@@ -1,0 +1,72 @@
+const DebateBoxSkeleton = (props) => {
+  return (
+    <div style={{ marginTop: "1em" }}>
+      <div style={{ marginRight: ".5em" }}>
+        <Skeleton height={props.isMainDebate && !props.isMobile ? 330 : 200} />
+        <Skeleton height={20} style={{margin: "1em 0"}} />
+        <div style={{ display: "flex", flexDirection: "row", justifycontent: "flex-start" }}>
+          <Skeleton circle={true} height={40} width={40} style={{marginRight: "15px"}} />
+          <Skeleton circle={true} height={40} width={40} style={{marginRight: "15px"}} />
+          <Skeleton circle={true} height={40} width={40} style={{marginRight: "15px"}} />
+          <div style={{ marginLeft: "auto", alignSelf: "flex-end", marginRight: "5px" }}>
+            <Skeleton height={10} width={70} />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+-------------------------------- INITIAL RECORDS LIST --------------------------------
+
+<Card
+                onClick={() => setModalOpen(true)}
+                bordered={false}
+                hoverable
+                style={{
+                    width: 240,
+                    height: 350,
+                }}
+                cover={<img src={props.info.basic_information.cover_image} alt="cover" className="record-cover" />}
+            >
+                <Meta 
+                    title={props.info.basic_information.title} 
+                    description={props.info.basic_information.artists.map(artist => {
+                        for(artist of props.info.basic_information.artists) {
+                            return artist.name;
+                        }
+                    })} 
+
+                    />
+            </Card>
+            <Modal
+                title={props.info.basic_information.title}
+                style={{
+                    width: 500,
+                    height: 500,
+                    
+
+                }}
+                open={modalOpen}
+                onOk={() => setModalOpen(false)}
+                onCancel={() => setModalOpen(false)}
+                footer={[
+                    <a href={discogsUrl} target="_blank" rel="noreferrer">View more on Discogs</a>
+                ]}
+            >
+                <img src={props.info.basic_information.cover_image} alt="cover" className="modal-record-cover" />
+                <p className="modal-record-artist">
+                    {props.info.basic_information.artists.map(artist => {
+                        for(artist of props.info.basic_information.artists) {
+                            return artist.name;
+                        }
+                    })} 
+                </p>
+                <p className="modal-record-genre">
+                    {props.info.basic_information.genres}
+                    <span> / {props.info.basic_information.styles}</span>
+                </p>
+                <p className="modal-record-year">
+                    {props.info.basic_information.year}
+                </p>
+            </Modal>

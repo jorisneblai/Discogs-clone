@@ -14,7 +14,7 @@ const RecordsIndex = (props) => {
 
     return (
         <div className='recordsIndexContainer'>
-            {  true ?
+            {  isLoading ?
                     <RecordCardSkeleton />
             :
                 data && data.releases && data.releases.map(recordInfo => 
