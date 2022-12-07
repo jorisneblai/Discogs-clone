@@ -1,7 +1,7 @@
 import React from 'react';
 // import { HomeOutlined } from '@ant-design/icons';
 import Icon from '@ant-design/icons';
-import './Navbar.css';
+import './Navbar.scss';
 
 const VinylSvg = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor" className="bi bi-vinyl" viewBox="0 0 16 16">

@@ -3,7 +3,7 @@ import { useDiscogs } from '../../Utils/useDiscogs';
 import Record from '../Record/Record';
 import RecordCardSkeleton from '../RecordCardSkeleton/RecordCardSkeleton';
 
-import './RecordsIndex.css';
+import './RecordsIndex.scss';
 
 const RecordsIndex = (props) => {
     const [{ data, isLoading, isError }, getRecords] = useDiscogs('/users/jewice/collection/folders/0/releases', 1, 10);
