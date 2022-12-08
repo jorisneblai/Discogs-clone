@@ -1,9 +1,13 @@
+.recordsIndexWrapper {
+    padding: 100px 50px 50px 50px;
+}
+
 .recordsIndexContainer {
     display: flex;
     flex-direction: row;
-    padding-top: 100px;
+    padding-top: 20px;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     gap: 1rem;
     box-sizing: border-box;
 }
